@@ -15,7 +15,7 @@ import Delete from "../svg/Delete";
 function Profile() {
   const [img, setImg] = useState("");
   const [user, setUser] = useState();
-  const [bio, setBio] = useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,21 +30,19 @@ function Profile() {
           storage,
           `avatar/${new Date().getTime()} - ${img.name}`
         );
-          try {
-              if (user.avatarPath) {
-                await deleteObject(ref(storage, user.avatarPath))
-            }
+        try {
+          if (user.avatarPath) {
+            await deleteObject(ref(storage, user.avatarPath));
+          }
           const snap = await uploadBytes(imgRef, img);
           const url = await getDownloadURL(ref(storage, snap.ref.fullPath));
 
           await updateDoc(doc(db, "users", auth.currentUser.uid), {
             avatar: url,
             avatarPath: snap.ref.fullPath,
-            bio,
           });
           console.log(url);
           setImg("");
-          setBio("");
         } catch (error) {
           console.log(error.message);
         }
@@ -107,6 +105,8 @@ function Profile() {
         />
         <p>{user.bio}</p>
       </div> */}
+      {/* <p>{user.bio}</p> */}
+      {/* <button>edit bio</button> */}
     </section>
   ) : null;
 }
