@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { doc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -65,6 +66,7 @@ function Login() {
         <button type="submit" disabled={loading} className="btn">
           {loading ? "Logging In..." : "Login"}
         </button>
+        <p style={{textAlign : 'center'}}>Don't have an account. <Link to={'/register'}>Register here</Link></p>
       </form>
     </section>
   );

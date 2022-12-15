@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { doc, setDoc, Timestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Register() {
   const navigate = useNavigate();
@@ -89,6 +90,7 @@ function Register() {
         <button type="submit" disabled={loading} className="btn">
           Register
         </button>
+        <p style={{textAlign : 'center'}}>Already have an account. <Link to={'/login'}>Login</Link></p>
       </form>
     </section>
   );
