@@ -20,7 +20,8 @@ nav {
   justify-content: space-between;
   height: 60px;
   padding: 0px 20px;
-  background-color: var(--color-1);
+  /* background-color: var(--color-1); */
+  background-color: #000;
   border-bottom: 1px solid var(--color-6);
 }
 nav a {
@@ -102,9 +103,11 @@ button[disabled] {
   color: #666666;
   transition: none;
 }
-/* .btn:hover {
-  transform: scale(1.05);
-} */
+.btn:hover, .btn-nav:hover{
+  /* transform: scale(1.05); */
+  color: black;
+  background: rgb(253, 253, 253);
+}
 .error {
   text-align: center;
   color: var(--color-5);
@@ -158,6 +161,7 @@ button[disabled] {
   height: calc(100vh - 70px);
   width: 70%;
   margin: 0 auto;
+  background: #000000;
 }
 .users_container {
   padding-top: 15px;
@@ -306,13 +310,12 @@ button[disabled] {
     right: 0;
     bottom: 5px;
   }
-  .message_form input{
+  .message_form input {
     width: 20vw;
   }
   .message_wrapper p {
     max-width: 75%;
   }
-  
 }
 
 @media screen and (max-width: 576px) {
