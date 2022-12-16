@@ -8,4 +8,4 @@ A private chat app with firebase backend and react.
 
 ![App Screenshot](https://i.postimg.cc/50YZXrD4/readme1.png)
 
-[Demo](https://chatt-firebasee.vercel.app/login)
+[Demo](https://chatt-firebasee.vercel.app/)
