@@ -49,7 +49,7 @@ function Profile() {
       };
       uploadImg();
     }
-  }, [img]);
+  }, [img, user]);
 
   const deleteImg = async () => {
     try {
@@ -67,6 +67,20 @@ function Profile() {
       console.log(error.message);
     }
   };
+  
+  const editBio = async () => {
+    const newBio = prompt("Write your bio");
+    try {
+      if (newBio) {
+        await updateDoc(doc(db, "users", auth.currentUser.uid), {
+          bio: newBio,
+        });
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return user ? (
     <section>
       <div className="profile_container">
@@ -91,22 +105,15 @@ function Profile() {
         <div className="text_container">
           <h3>{user.name}</h3>
           <p>{user.email}</p>
-          <hr />
+          {/* <hr /> */}
           <small>Joined on: {user.createdAt.toDate().toDateString()}</small>
         </div>
       </div>
 
-      {/* create a new compo and update doc  */}
-      {/* <div>
-        <input
-          type="text"
-          value={bio}
-          onChange={(e) => setBio(e.target.value)}
-        />
+      <div className="bio_container">
+        <button onClick={editBio}>Edit Bio</button>
         <p>{user.bio}</p>
-      </div> */}
-      {/* <p>{user.bio}</p> */}
-      {/* <button>edit bio</button> */}
+      </div>
     </section>
   ) : null;
 }

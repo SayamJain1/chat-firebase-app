@@ -84,7 +84,7 @@ section .form {
   transition: 0.3s ease-in-out all;
   font-size: 16px;
 }
-.btn-nav {
+.btn_nav {
   background: #1a1a1b;
   padding: 10px;
   border-radius: 5px;
@@ -149,6 +149,35 @@ button[disabled] {
 }
 .text_container h3 {
   text-align: left;
+  color: rgba(255, 255, 255, 0.911);
+}
+.bio_container{
+  padding: 19px 5px;
+  margin: 10px auto;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  background: #1a1a1b;
+  border: 1px solid rgba(78, 78, 78, 0.568);
+  border-radius: 10px;
+}
+
+.bio_container p {
+  padding: 0 15px;
+  word-wrap: break-word;
+  width: 100%;
+}
+.bio_container button {
+  background: #1a1a1b;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--color-4);
+  color: var(--color-2);
+  cursor: pointer;
 }
 
 .home_container {
@@ -322,6 +351,15 @@ button[disabled] {
   .home_container {
     grid-template-columns: 1fr 5fr;
   }
+  .profile_container{
+    flex-direction: column;
+  }
+  .text_container {
+    text-align: center;
+  }
+  .text_container h3 {
+  text-align: center;
+}
   .user_wrapper {
     display: none;
   }
@@ -332,7 +370,7 @@ button[disabled] {
   }
   .sm_screen {
     margin-top: 9px;
-    margin-left: 4px;
+    margin-left: 8px;
     max-width: 40px;
     max-height: 40px;
     display: inline-block;
@@ -344,8 +382,30 @@ button[disabled] {
   .message_form .btn {
     margin: 0px;
   }
-
   .message_wrapper p {
     max-width: 100%;
+  }
+  .btn{
+    padding: 5px;
+  }
+  .btn_nav{
+    padding: 5px;
+    font-size: 13px;
+  }
+  nav{
+    width: 100%;
+  }
+  .home_container {
+    width:100%;
+  }
+}
+
+@media screen and (max-width: 285px) {
+  .sm_screen {
+    margin-top: 9px;
+    margin-left: 3px;
+    max-width: 30px;
+    max-height: 30px;
+    display: inline-block;
   }
 }

@@ -27,7 +27,7 @@ function Navbar() {
         {user ? (
           <>
             <NavLink to="/profile">Profile</NavLink>
-            <button className="btn-nav" onClick={handleSignOut}>
+            <button className="btn_nav" onClick={handleSignOut}>
               Logout
             </button>
           </>
