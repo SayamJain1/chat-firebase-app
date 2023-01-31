@@ -12,7 +12,7 @@ function MessageForm({ handleSubmit, setText, text, setImg }) {
           placeholder="Write Message"
         />
       </div>
-      <label htmlFor="img" style={{marginRight: '10px'}}>
+      <label htmlFor="img" title="upload image" style={{marginRight: '10px'}}>
         <Attetch />
       </label>
       <input

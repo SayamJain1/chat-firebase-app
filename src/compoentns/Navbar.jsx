@@ -6,22 +6,22 @@ import { AuthContext } from "../context/auth";
 import { auth, db } from "../firebase";
 
 function Navbar() {
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   // const user = useAuth()
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   const handleSignOut = async () => {
     await updateDoc(doc(db, "users", user.uid), {
       isOnline: false,
     });
     await signOut(auth);
-    navigate('/login')
+    navigate("/login");
   };
 
   return (
     <nav>
       <h3>
-        <NavLink to="/">Chat</NavLink>
+        <NavLink to="/">Talkrr</NavLink>
       </h3>
       <div>
         {user ? (

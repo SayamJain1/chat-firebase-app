@@ -88,7 +88,7 @@ function Profile() {
           <img src={user.avatar || Img} alt="Avatar" />
           <div className="overlay">
             <div>
-              <label htmlFor="photo">
+              <label htmlFor="photo" title="upload picture">
                 <Camera />
               </label>
               {user.avatar ? <Delete deleteImg={deleteImg} /> : null}
